@@ -1,0 +1,22 @@
+unique="docker"
+desc="Docker 及其周边工具"
+
+[[cards]]
+title="容器的操作"
+content="""
+# 启动一个新的容器
+
+```sh
+docker run [OPTIONS] ${IMAGE_NAME} [COMMAND] [ARG...]
+```
+
+# 运行已存在的容器
+
+```sh
+docker start [OPTIONS] ${CONTAINER_NAME...}
+
+# 重启正在运行的容器
+docker restart [OPTIONS] ${CONTAINER_NAME...}
+```
+
+"""

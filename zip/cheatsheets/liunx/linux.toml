@@ -1,0 +1,113 @@
+unique="linux"
+desc="Linux DevOps"
+
+[[cards]]
+title="系统 - 检查/度量工具集"
+content="""
+```sh
+# TODO
+```
+"""
+
+[[cards]]
+title="CPU - 调试/运维工具集"
+content="""
+```sh
+# TODO
+```
+"""
+
+[[cards]]
+title="内存 - 调试/运维工具集"
+content="""
+```sh
+# TODO
+```
+"""
+
+[[cards]]
+title="磁盘 - 调试/运维工具集"
+content="""
+```sh
+# TODO
+```
+"""
+
+[[cards]]
+title="网络 - 调试/运维工具集"
+content="""
+```sh
+# TODO
+```
+"""
+
+[[cards]]
+title="包管理 - Debian 系"
+content="""
+
+# Installing packages
+
+```sh
+apt-get install ${PACKAGE_NAME...}
+```
+# 卸载软件
+```sh
+apt-get remove ${PACKAGE_NAME...}
+apt-get purge ${PACKAGE_NAME...} # 卸载软件并移除相关配置文件
+```
+# Upgrading packages
+```sh
+apt-get -u upgrade
+```
+# Upgrading to a new release
+
+```sh
+apt-get -u dist-upgrade
+```
+
+# Removing unused package files
+```sh
+apt-get clean
+apt-get autoclean
+```
+# 软件源配置文件
+```sh
+/etc/apt/sources.list
+/etc/apt/sources.list.d
+```
+"""
+
+[[cards]]
+title="包管理 - RedHat 系"
+content="""
+# Installing packages
+
+```sh
+# TODO
+```
+# 卸载软件
+```sh
+# TODO
+```
+# Upgrading packages
+
+```sh
+# TODO
+```
+# Upgrading to a new release
+
+```sh
+# TODO
+```
+
+# Removing unused package files
+
+```sh
+# TODO
+```
+
+# 软件源配置文件
+```sh
+# TODO
+```
+"""

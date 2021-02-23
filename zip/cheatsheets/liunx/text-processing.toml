@@ -1,0 +1,92 @@
+unique="text-processing"
+desc="类 Unix 环境下的文本处理工具"
+
+[[cards]]
+title="Vi / Vim"
+content="""
+# Exiting / Quiting
+
+|  指令                 | 备注                          |
+|  ----                 | ----                          |
+| `:wq` / `:x` / `ZZ`   | Save and close file           |
+| `q!` / `ZQ`           | Close file, abandon changes   |
+| `Esc`                 | Exit insert mode              |
+
+
+# Cursor navigating
+
+|  指令             | 备注                                |
+|  ----             | ----                               |
+| `h`、`j`、`k`、`l` | `←`，`↓`、`↑`、`→`                  |
+| `gg`              | First line                          |
+| `G`               | Last line                           |
+| `0` (zero)        | Start of line                       |
+| `^`               | Start of line (after whitespace)    |
+| `$`               | End of line                         |
+
+# Clipboard
+
+|  指令             | 备注                                   |
+|  ----             | ----                                   |
+| `yy` / `2yy`      | Yank (copy) a/2 line(s)                |
+| `p`               | Put (paste) the clipboard after cursor |
+| `dd` / `2dd`      | Delete (cut) a / 2 line(s)             |
+| `x`               | Delete (cut) character                 |
+
+# Reference
+
+- [Devhints.io - Vim cheatsheet](https://devhints.io/vim)
+- [vim.rotrr.com - Vim Cheat Sheet](https://devhints.io/vim)
+
+"""
+
+
+[[cards]]
+title="AWK"
+content="""
+```sh
+# TODO
+```
+"""
+
+[[cards]]
+title="Sed"
+content="""
+# In-place replacement (GNU)
+```sh
+sed -i -e 's/foo/bar/' example.md
+```
+"""
+
+[[cards]]
+title="View files"
+content="""
+# cat - concatenate
+```sh
+cat [-AbeEnstTuv] [--help] [--version] fileName
+
+# -n 或 --number：由 1 开始对所有输出的行数编号。
+# -b 或 --number-nonblank：和 -n 相似，只不过对于空白行不编号。
+# -s 或 --squeeze-blank：把连续两行以上的空白行替换为换为一个。
+```
+
+# tac
+```sh
+# TODO
+```
+
+# less / more
+```sh
+# TODO
+```
+
+# head
+```sh
+# TODO
+```
+
+# tail
+```sh
+# TODO
+```
+"""

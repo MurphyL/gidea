@@ -4,17 +4,19 @@ body {
     background: #f1f3f5;
 }
 
-.wrapper {
-    --card-count: 3; 
-}
-
 .wrapper .board {
+    /** 变量 **/
+    --cardCount: 3;
+    --cardFont: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+    --codeFont: 16px Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
+    --commentFont: italic 13px/normal Arial,Helvetica,Sans-Serif;
+    /** 样式 **/ 
     margin: 20px 30px;
 }
 
 .wrapper .board .masonry {
     width: 100%; 
-    columns: 3;
+    columns: var(--cardCount);
     column-gap: 30px; 
 }
 
@@ -33,7 +35,7 @@ body {
     overflow: hidden; 
     font-size: 19px;
     font-weight: 400;
-    font-family: -apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,ubuntu,cantarell,fira sans,droid sans,helvetica neue,sans-serif;
+    font-family: var(--cardFont);
 }
 
 .wrapper .board .card h3::after {
@@ -48,26 +50,89 @@ body {
 
 .wrapper .board .card article {
     margin: 0 0 10px;
-    padding: 10px 16px;
+    padding: 20px 16px;
     background-color: #ffffff;
     border-radius: 3px;
     box-shadow: 0 6px 8px rgb(85 102 119 / 3%), 0 1px 1px rgb(85 102 119 / 40%);
 }
 
-.wrapper .board .card article h4 {
-    margin: 15px 0 10px;
+.wrapper .board .card article :global(.hljs) {
+    padding: 0;
 }
 
-.wrapper .board .card article .code_block {
+.wrapper .board .card article :global(.hljs-comment) {
+    font: var(--commentFont);
+    letter-spacing: 0.6px;
+}
+
+.wrapper .board .card article :global(.mkr-title) {
+    margin: 15px 0 10px;
+    font-weight: 500;
+}
+
+.wrapper .board .card article :global(.mkr-title):first-child {
+    margin-top: 3px;
+}
+
+.wrapper .board .card article ul {
+    margin: 10px 0;
+    padding-left: 22px;;
+    line-height: 1.8;
+}
+
+.wrapper .board .card article :global(.mkr-prepare) {
     position: relative;
     margin: 0;
-    padding: 15px 10px;
+    padding: calc(15px - 0.5em);
     border: 1px solid rgba(230, 230, 230, 0.6);
     border-radius: 3px;
     background: #f8f9fa;
+    line-height: 1.2;
+    
 }
 
-.wrapper .board .card article .code_block code::before {
+.wrapper .board .card article code {
+    font: var(--codeFont);
+}
+
+.wrapper .board .card article :global(.mkr-prepare) code {
+    letter-spacing: -0.03em;
+    font-weight: 300;
+    
+}
+
+.wrapper .board .card article :global(code.mkr-code) {
+    font-size: 14px;
+    padding: 4px 6px;
+    background: #f8f9fa;
+    border-radius: 3px;
+    letter-spacing: 2PX;
+    color: #345;
+}
+
+.wrapper .board .card article :global(.mkr-table) {
+    width: 100%;
+	border-spacing: 0;
+    border-bottom: 1px solid #efefef;
+}
+
+
+.wrapper .board .card article :global(.mkr-table) thead {
+    display: none;
+}
+
+.wrapper .board .card article :global(.mkr-table) td {
+	padding: 0 10px;
+	line-height: 35px;
+    border-top: 1px solid #efecef;
+}
+
+.wrapper .board .card article :global(.mkr-table) td:last-child {
+    text-align: right;
+}
+
+/**
+.wrapper .board .card article pre code::before {
     position: absolute;
     top: 0;
     right: 10px;
@@ -75,3 +140,4 @@ body {
     font-size: 10px;
     font-family: cousine,sfmono-regular,Consolas,Menlo,liberation mono,ubuntu mono,Courier,monospace;
 }
+**/

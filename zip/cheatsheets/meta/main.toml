@@ -1,0 +1,28 @@
+unique="main"
+desc="全部文档"
+
+[[cards]]
+unique="java"
+title="Java 开发相关"
+content="""
+- [Java Development Kits](/cheatsheets/jdk)
+- [Spring Framework](/cheatsheets/spring)
+- [Java 第三方类库](/cheatsheets/java-libs)
+"""
+
+[[cards]]
+unique="devops"
+title="运维及常用工具"
+content="""
+- [Docker 及其周边工具](/cheatsheets/docker)
+- [Debian系包管理器 - APT](/cheatsheets/linux)
+- [类 Unix 环境下的文本处理](/cheatsheets/text-processing)
+"""
+
+[[cards]]
+unique="other"
+title="暂未归类"
+content="""
+- [常用工具集合/列表](/cheatsheets/kits)
+"""
+
