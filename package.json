@@ -1,0 +1,39 @@
+{
+  "name": "gidea",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.21.1",
+    "insert-css": "^2.0.0",
+    "markdown-to-jsx": "^7.1.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "scripts": {
+    "serve": "react-scripts start",
+    "build": "react-scripts build",
+    "cheatsheets": "node zip/cheatsheets/build.mjs"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "react-scripts": "4.0.1",
+    "toml": "^3.0.0"
+  }
+}
