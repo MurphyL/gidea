@@ -63,7 +63,7 @@ title="View files"
 content="""
 # cat - concatenate
 ```sh
-cat [-AbeEnstTuv] [--help] [--version] fileName
+cat [OPTIONS] fileName
 
 # -n 或 --number：由 1 开始对所有输出的行数编号。
 # -b 或 --number-nonblank：和 -n 相似，只不过对于空白行不编号。

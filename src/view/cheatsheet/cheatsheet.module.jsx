@@ -10,6 +10,8 @@ import styles from "./cheatsheet.module.css";
 
 import 'highlight.js/styles/github.css';
 
+console.log(process, process.env);
+
 const reducer = (state, action) => {
     const { type, params, source } = action;
     switch (type) {
@@ -65,7 +67,7 @@ const SheetObject = () => {
         <div className={styles.wrapper}>
             <Breadcrumb>
                 <Link key={0} to="/cheatsheets">🏠</Link>
-                <span>{item.desc || item.unique}</span>
+                <a href={ `${process.env.REACT_APP_GH_REPO}//tree/main/zip/${item.filepath}` } rel="noreferrer" target="_blank">{item.desc || item.unique}</a>
             </Breadcrumb>
             <div className={styles.board}>
                 <Masonry items={item.cards} />

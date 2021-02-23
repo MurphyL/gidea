@@ -71,6 +71,7 @@ for (let cate of cates) {
         for (let card of (cheatsheet.cards || [])) {
             card.html = showdownConverter.makeHtml(card.content);
         }
+        cheatsheet.filepath = `cheatsheets/${cate.name}/${sheet.name}`;
         zipObject[cheatsheet.unique] = cheatsheet;
     }
 }
