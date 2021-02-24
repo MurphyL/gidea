@@ -6,7 +6,7 @@ import { Loading, Breadcrumb, Pane } from "kayo";
 
 import { doAjax } from "utils/ajax";
 
-import MarkdownRender from "plug/markdown/render/markdown.render.module";
+import MarkdownRender from "plug/markdown/render/markdown.renderer.module";
 
 import styles from "./cheatsheet.module.css";
 

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import highlighter from 'highlight.js';
 
-import styles from "./markdown.render.module.css";
+import styles from "./markdown.renderer.module.css";
 
 const Title = ({ level = 4, children }) => {
     const type = `h${(level > 4 ? level : 4)}`;
@@ -109,7 +109,7 @@ const markdownOptions = {
     overrides
 };
 
-const MarkdownRender = ({ source }) => {
+const MarkdownRenderer = ({ source }) => {
     return (
         <div className={styles.wrapper}>
             <Markdown children={source} options={markdownOptions} />
@@ -117,7 +117,7 @@ const MarkdownRender = ({ source }) => {
     );
 };
 
-Markdown.displayName = "Render";
-MarkdownRender.displayName = "Markdown";
+Markdown.displayName = "Renderer";
+MarkdownRenderer.displayName = "Markdown";
 
-export default MarkdownRender;
+export default MarkdownRenderer;
