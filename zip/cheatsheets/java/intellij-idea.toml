@@ -1,0 +1,18 @@
+unique="idea"
+desc="IntelliJ IDEA"
+
+[[cards]]
+title="增效插件"
+content="""
+```sh
+# TODO
+```
+"""
+
+[[cards]]
+title="常用快捷键"
+content="""
+```sh
+# TODO
+```
+"""

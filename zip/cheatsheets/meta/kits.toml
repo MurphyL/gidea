@@ -1,2 +1,12 @@
 unique="kits"
 desc="常用工具集合/列表"
+
+[[cards]]
+title="开发相关软件"
+content="""
+
+- Notepad3
+- InteliJ IDEA
+- Beekeeper Studio
+
+"""

@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useReducer } from 'react';
 
 import { Link } from "react-router-dom";
 
-import { Loading, Breadcrumb, Card } from "kayo";
+import { Loading, Breadcrumb, Pane } from "kayo";
 
 import { doAjax } from "utils/ajax";
 
@@ -49,14 +49,14 @@ const SheetWrapper = ({ params, children }) => {
 const Masonry = ({ items }) => {
     return (
         <div className={styles.masonry}>
-            {(items || []).map(({ title, html, content }, index) => (
+            {(items || []).map(({ title, content }, index) => (
                 <div className={styles.card} key={index}>
-                    <h3>{title}</h3>
-                    <Card>
+                    <Pane>
+                        <h3>{title}</h3>
                         <article>
                             <MarkdownRender source={content || '> Nothing here!'} />
                         </article>
-                    </Card>
+                    </Pane>
                 </div>
             ))}
         </div>

@@ -7,8 +7,12 @@
     font-size: 1.8rem;;
 }
 
-.wrapper .doc_title:first-child {
+.wrapper section *:first-child {
     margin-top: 3px;
+}
+
+.wrapper section *:last-child {
+    margin-bottom: 3px;
 }
 
 .wrapper .doc_list {

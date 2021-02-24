@@ -1,6 +1,6 @@
-import styles from "./card.module.css";
+import styles from "./pane.module.css";
 
-const Card = ({ children }) => {
+const Pane = ({ children }) => {
     return (
         <div className={styles.wrapper}>
             {children}
@@ -8,4 +8,4 @@ const Card = ({ children }) => {
     );
 };
 
-export default Card;
+export default Pane;
