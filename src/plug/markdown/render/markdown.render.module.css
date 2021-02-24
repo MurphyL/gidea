@@ -1,0 +1,93 @@
+.wrapper {
+    --codeFont: 16px Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
+}
+
+.wrapper .doc_title {
+    margin: 15px 0 10px;
+    font-size: 1.8rem;;
+}
+
+.wrapper .doc_title:first-child {
+    margin-top: 3px;
+}
+
+.wrapper .doc_list {
+    display: block;
+}
+
+.wrapper .doc_list li {
+    margin-bottom: 0;
+}
+
+.wrapper .doc_ol {
+    display: block;
+}
+
+.wrapper .doc_ul {
+    display: block;
+}
+
+
+.wrapper .doc_code {
+    font-size: 0.8rem;
+}
+
+.wrapper .doc_code_block {
+    display: block;
+}
+
+.wrapper .doc_code_block pre {
+    position: relative;
+    margin: 0;
+    line-height: 1.2;
+    
+}
+
+.wrapper code {
+    font: var(--codeFont);
+}
+
+.wrapper .doc_inline_code {
+    font-size: 0.8rem;
+}
+
+.wrapper .doc_prepare_code {
+    font-size: 1.2rem;
+}
+
+.wrapper .doc_prepare_code :global(.hljs-comment) {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.wrapper .doc_table {
+    width: 100%;
+	border-spacing: 0;
+}
+
+
+.wrapper .doc_table thead {
+    display: none;
+}
+
+.wrapper .doc_table td {
+	padding: 0 10px;
+	line-height: 35px;
+    border-top: 1px solid #efecef;
+}
+
+.wrapper .doc_table td:last-child {
+    text-align: right;
+}
+
+/**
+.wrapper .board .card article pre code::before {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    content: attr(class);
+    font-size: 10px;
+    font-family: cousine,sfmono-regular,Consolas,Menlo,liberation mono,ubuntu mono,Courier,monospace;
+}
+**/
+

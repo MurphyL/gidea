@@ -4,6 +4,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import { SheetBoard, SheetCates } from "view/cheatsheet/cheatsheet.module";
 
+import "milligram/dist/milligram.min.css";
+
 const App = () => {
     return (
         <React.StrictMode>

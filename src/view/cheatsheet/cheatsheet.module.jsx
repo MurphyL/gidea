@@ -2,15 +2,13 @@ import React, { createContext, useContext, useEffect, useReducer } from 'react';
 
 import { Link } from "react-router-dom";
 
-import { Loading, Breadcrumb } from "kayo";
+import { Loading, Breadcrumb, Card } from "kayo";
 
 import { doAjax } from "utils/ajax";
 
+import MarkdownRender from "plug/markdown/render/markdown.render.module";
+
 import styles from "./cheatsheet.module.css";
-
-import 'highlight.js/styles/github.css';
-
-console.log(process, process.env);
 
 const reducer = (state, action) => {
     const { type, params, source } = action;
@@ -51,10 +49,14 @@ const SheetWrapper = ({ params, children }) => {
 const Masonry = ({ items }) => {
     return (
         <div className={styles.masonry}>
-            {(items || []).map(({ title, html }, index) => (
+            {(items || []).map(({ title, html, content }, index) => (
                 <div className={styles.card} key={index}>
                     <h3>{title}</h3>
-                    <article dangerouslySetInnerHTML={{ __html: html }}></article>
+                    <Card>
+                        <article>
+                            <MarkdownRender source={content || '> Nothing here!'} />
+                        </article>
+                    </Card>
                 </div>
             ))}
         </div>
@@ -67,7 +69,7 @@ const SheetObject = () => {
         <div className={styles.wrapper}>
             <Breadcrumb>
                 <Link key={0} to="/cheatsheets">🏠</Link>
-                <a href={ `${process.env.REACT_APP_GH_REPO}//tree/main/zip/${item.filepath}` } rel="noreferrer" target="_blank">{item.desc || item.unique}</a>
+                <a href={`${process.env.REACT_APP_GH_REPO}//tree/main/zip/${item.filepath}`} rel="noreferrer" target="_blank">{item.desc || item.unique}</a>
             </Breadcrumb>
             <div className={styles.board}>
                 <Masonry items={item.cards} />

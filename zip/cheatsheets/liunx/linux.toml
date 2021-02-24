@@ -53,7 +53,9 @@ apt-get install ${PACKAGE_NAME...}
 # 卸载软件
 ```sh
 apt-get remove ${PACKAGE_NAME...}
-apt-get purge ${PACKAGE_NAME...} # 卸载软件并移除相关配置文件
+
+# 卸载软件并移除相关配置文件
+apt-get purge ${PACKAGE_NAME...} 
 ```
 # Upgrading packages
 ```sh
