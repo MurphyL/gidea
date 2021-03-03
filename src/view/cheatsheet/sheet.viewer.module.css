@@ -4,27 +4,27 @@ body {
     background: #f1f3f5;
 }
 
-.wrapper .board {
+.viewer .board {
     /** 变量 **/
     --cardCount: 3;
     /** 样式 **/ 
     margin: 20px 30px;
 }
 
-.wrapper .board .masonry {
+.viewer .board .masonry {
     width: 100%; 
     columns: var(--cardCount);
     column-gap: 30px; 
 }
 
-.wrapper .board .card {
+.viewer .board .card {
     margin-bottom: 10px;
     break-inside: avoid;
     width: 100%;
     height: 100%;
 }
 
-.wrapper .board .card h3 {
+.viewer .board .card h3 {
     margin: 0;
     padding-top: 8px;
     padding-bottom: 16px;
@@ -35,7 +35,7 @@ body {
     font-size: 2rem;
 }
 
-.wrapper .board .card h3::after {
+.viewer .board .card h3::after {
     margin-left: 10px;
     content: '';
     display: inline-block;
@@ -45,10 +45,12 @@ body {
     background: linear-gradient(to right,rgba(116,95,181,0.2),transparent 80%);
 }
 
-.wrapper .board .card article {
+.viewer .board .card article {
     margin: 0 0 10px;
     padding: 15px;
     border-radius: 3px;
     background-color: #fff;
     box-shadow: 0 6px 8px rgb(85 102 119 / 3%), 0 1px 1px rgb(85 102 119 / 40%);
 }
+
+

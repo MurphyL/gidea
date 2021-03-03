@@ -117,7 +117,6 @@ const MarkdownRenderer = ({ source }) => {
     );
 };
 
-Markdown.displayName = "Renderer";
-MarkdownRenderer.displayName = "Markdown";
+Markdown.displayName = "MarkdownToJSX";
 
 export default MarkdownRenderer;

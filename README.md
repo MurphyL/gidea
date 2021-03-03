@@ -9,3 +9,7 @@
 - http://www.cheat-sheets.org/saved-copy/refcard-en-a4.pdf
 - https://distrowatch.com/dwres.php?resource=package-management
 
+## 技术文档
+
+- [CSS 变量](http://www.ruanyifeng.com/blog/2017/05/css-variables.html)
+

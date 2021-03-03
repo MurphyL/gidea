@@ -1,0 +1,10 @@
+unique="linux-kits"
+desc="类 Unix 环境常用工具"
+
+[[cards]]
+title="iconv - 字符编码集转换工具"
+content="""
+```sh
+iconv ${FILE_PATH} -f utf-8 -t GBK
+```
+"""

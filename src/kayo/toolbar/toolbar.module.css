@@ -1,0 +1,19 @@
+.wrapper {
+    display: inline-block;
+    margin: 5px 3px;
+    padding: 0;
+    height: 35px;
+    list-style: none;
+}
+
+.wrapper li {
+    display: inline-block;
+    margin: 0;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.wrapper li * {
+    vertical-align: middle;
+    line-height: 35px;
+}

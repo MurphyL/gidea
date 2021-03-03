@@ -2,13 +2,16 @@ import React, { createContext, useContext, useEffect, useReducer } from 'react';
 
 import { Link } from "react-router-dom";
 
-import { Loading, Breadcrumb, Pane } from "kayo";
+import { Loading, Breadcrumb, Pane, Toolbar, DetailsList as UnorderdList } from "kayo";
 
 import { doAjax } from "utils/ajax";
 
-import MarkdownRender from "plug/markdown/render/markdown.renderer.module";
+import { BootStrapIcon } from "plug/icons/icons";
 
-import styles from "./cheatsheet.module.css";
+import MarkdownRender from "plug/markdown/renderer/markdown.renderer.module";
+
+import viewerStyles from "./sheet.viewer.module.css";
+import editorStyles from "./sheet.editor.module.css";
 
 const reducer = (state, action) => {
     const { type, params, source } = action;
@@ -22,10 +25,10 @@ const reducer = (state, action) => {
 
 const SheetContext = createContext(null);
 
-const SheetWrapper = ({ params, children }) => {
+const SheetProvider = ({ params, children }) => {
     const [state, dispatch] = useReducer(reducer, null);
     useEffect(() => {
-        doAjax({ url: '/zip/cheatsheets.json' }).then(({ status, payload }) => {
+        doAjax({ url: '/zip/cheatsheets.json' }).then(({ payload }) => {
             dispatch({ type: 'FETCH_ITEM', params, source: payload });
         });
     }, [params]);
@@ -48,9 +51,9 @@ const SheetWrapper = ({ params, children }) => {
 
 const Masonry = ({ items }) => {
     return (
-        <div className={styles.masonry}>
+        <div className={viewerStyles.masonry}>
             {(items || []).map(({ title, content }, index) => (
-                <div className={styles.card} key={index}>
+                <div className={viewerStyles.card} key={index}>
                     <Pane>
                         <h3>{title}</h3>
                         <article>
@@ -63,15 +66,15 @@ const Masonry = ({ items }) => {
     );
 };
 
-const SheetObject = () => {
+const SheetViewer = () => {
     const item = useContext(SheetContext);
     return (
-        <div className={styles.wrapper}>
+        <div className={viewerStyles.viewer}>
             <Breadcrumb>
                 <Link key={0} to="/cheatsheets">🏠</Link>
-                <a href={`${process.env.REACT_APP_GH_REPO}//tree/main/zip/${item.filepath}`} rel="noreferrer" target="_blank">{item.desc || item.unique}</a>
+                <a href={`${process.env.REACT_APP_GH_REPO}/tree/main/zip/${item.filepath}`} rel="noreferrer" target="_blank">{item.desc || item.unique}</a>
             </Breadcrumb>
-            <div className={styles.board}>
+            <div className={viewerStyles.board}>
                 <Masonry items={item.cards} />
             </div>
         </div>
@@ -80,17 +83,54 @@ const SheetObject = () => {
 
 export const SheetCates = () => {
     return (
-        <SheetWrapper params={{ unique: 'main' }}>
-            <SheetObject />
-        </SheetWrapper>
+        <SheetProvider params={{ unique: 'main' }}>
+            <SheetViewer />
+        </SheetProvider>
+    );
+};
+
+const EditableCard = ({ content, title }) => {
+    const bindEvent = (type) => { console.log(type); };
+    return (
+        <div key={title} x={title}>
+            <div>
+                <div>
+                    <input defaultValue={title || '暂未设置'} />
+                </div>
+                <div>
+                    <textarea rows="3" defaultValue={content || '暂未设置'} />
+                </div>
+            </div>
+            <Toolbar bindEvent={ ({ type }) => bindEvent(type) }>
+                <BootStrapIcon slug="aspect-ratio" type="full" />
+                <BootStrapIcon slug="arrow-bar-up" type="up" />
+                <BootStrapIcon slug="arrow-bar-down" type="down" />
+                <BootStrapIcon slug="trash" type="remove" />
+            </Toolbar>
+        </div>
+    );
+}
+
+const SheetEditor = () => {
+    const { desc, cards = [] } = useContext(SheetContext);
+    return (
+        <div className={editorStyles.editor}>
+            <div className="container">
+                <div>
+                    <input defaultValue={desc || '暂未设置'} />
+                </div>
+                <UnorderdList items={cards} render={EditableCard} />
+            </div>
+        </div>
     );
 };
 
 // http://www.cheat-sheets.org/
-export const SheetBoard = ({ match }) => {
+export const SheetBoard = ({ match, location }) => {
+    const editor = process.env.NODE_ENV === 'development' && location.search === '?editor';
     return (
-        <SheetWrapper params={match.params}>
-            <SheetObject />
-        </SheetWrapper>
+        <SheetProvider params={match.params}>
+            { editor ? (<SheetEditor />) : (<SheetViewer />)}
+        </SheetProvider>
     );
 };
