@@ -60,8 +60,10 @@
 }
 
 .wrapper .doc_prepare_code :global(.hljs-comment) {
+	font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-size: 1rem;
     font-style: italic;
+    opacity: 0.6;
 }
 
 .wrapper .doc_table {
