@@ -14,8 +14,15 @@ const Title = ({ level = 4, children }) => {
     return createElement(type, { className: styles.doc_title }, child);
 };
 
-const HyperLink = ({ children, href, title }) => {
-    return <Link to={href} title={title}>{children}</Link>;
+const HyperLink = ({ children, href, title, target }) => {
+	if(target === '_blank') {
+		return (
+			<a href={href} title={title} target="_blank" rel="noreferrer">{children}</a>
+		);
+	}
+    return (
+		<Link to={href} title={title}>{children}</Link>
+    );
 };
 
 const Paragraph = ({ children }) => {
