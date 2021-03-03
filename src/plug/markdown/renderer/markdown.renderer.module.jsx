@@ -15,9 +15,9 @@ const Title = ({ level = 4, children }) => {
 };
 
 const HyperLink = ({ children, href, title, target }) => {
-	if(target === '_blank') {
+	if(target) {
 		return (
-			<a href={href} title={title} target="_blank" rel="noreferrer">{children}</a>
+			<a href={href} title={title} target={ target } rel="noreferrer">{children}</a>
 		);
 	}
     return (
