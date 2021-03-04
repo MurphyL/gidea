@@ -1,0 +1,59 @@
+unique="mysql"
+desc="MySQL"
+
+[[cards]]
+title="检视表结构"
+content="""
+```sql
+show [DATABASES / TABLES / PROCESSLIST];
+
+show create table ${TABLE_NAME};
+
+desc ${TABLE_NAME};
+
+show [full] columns from ${TABLE_NAME};
+```
+"""
+
+[[cards]]
+title="Backup / Restore"
+content="""
+```sql
+mysqldump -u Username -p dbNameYouWant > databasename_backup.sql
+
+mysql - u Username -p dbNameYouWant < databasename_backup.sql;
+```
+"""
+
+[[cards]]
+title="Users and Privileges"
+content="""
+```sql
+CREATE USER 'user'@'localhost';
+
+GRANT ALL PRIVILEGES ON base.* TO 'user'@'localhost' IDENTIFIED BY 'password';
+
+GRANT SELECT, INSERT, DELETE ON base.* TO 'user'@'localhost' IDENTIFIED BY 'password';
+
+REVOKE ALL PRIVILEGES ON base.* FROM 'user'@'host'; -- one permission only
+
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'user'@'host'; -- all permissions
+
+FLUSH PRIVILEGES;
+```
+
+```sql
+SET PASSWORD = PASSWORD('new_pass');
+
+SET PASSWORD FOR 'user'@'host' = PASSWORD('new_pass');
+
+SET PASSWORD = OLD_PASSWORD('new_pass');
+```
+
+```sql
+DROP USER 'user'@'host';
+```
+
+> Host `%` indicates any host.
+
+"""

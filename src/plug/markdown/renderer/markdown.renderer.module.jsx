@@ -39,12 +39,12 @@ const Paragraph = ({ children }) => {
 };
 
 const Prepare = ({ children }) => {
-    if (children && typeof (children.type) === 'function') {
-        const { className, children: content } = children.props;
+    if (children && typeof(children.type) === 'function') {
+        const { className = '', children: content } = children.props;
         const langName = className.replace(/^lang-/, '');
         const { value: __html, top: lanType } = highlighter.highlight(langName, content);
         return (
-            <div className={styles.doc_code_block} data-lang={ lanType.name }>
+            <div className={styles.doc_code_block} data-lang={ lanType ? lanType.name : null }>
                 <pre>
                     <code className={styles.doc_prepare_code} dangerouslySetInnerHTML={{__html }}/>
                 </pre>
