@@ -40,7 +40,7 @@ const Paragraph = ({ children }) => {
 
 const Prepare = ({ children }) => {
     if (children && typeof(children.type) === 'function') {
-        const { className = '', children: content } = children.props;
+        const { className, children: content } = children.props;
         const langName = className.replace(/^lang-/, '');
         const { value: __html, top: lanType } = highlighter.highlight(langName, content);
         return (
@@ -52,7 +52,9 @@ const Prepare = ({ children }) => {
         )
     }
     return (
-        <div>TODO prepare block</div>
+        <div className={styles.doc_pre}>
+            <pre>{ children }</pre>
+        </div>
     );
 };
 
